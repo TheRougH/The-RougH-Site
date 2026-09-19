@@ -1,5 +1,15 @@
 (() => {
   const cfg = window.THE_ROUGH_CONFIG || {};
+  const isEN = document.documentElement.lang.toLowerCase().startsWith('en');
+  const t = {
+    streamAdd: isEN ? 'Streaming links to add in site-config.js' : 'Liens streaming à ajouter dans site-config.js',
+    linksConfig: isEN ? 'Links to configure' : 'Liens à configurer',
+    socialsConfig: isEN ? 'Social accounts to configure' : 'Réseaux à configurer',
+    youtubeConfig: isEN ? 'YouTube channel to configure' : 'Chaîne YouTube à configurer',
+    youtubeSee: isEN ? 'Visit the YouTube channel' : 'Voir la chaîne YouTube',
+    emailAdd: isEN ? 'Official email address to add in site-config.js' : 'Adresse e-mail officielle à ajouter dans site-config.js'
+  };
+
   const menuButton = document.querySelector('.menu-button');
   const nav = document.querySelector('.main-nav');
   menuButton?.addEventListener('click', () => {
@@ -37,8 +47,8 @@
     streamingMain.innerHTML = linksHTML(platforms);
     streamingSecondary.innerHTML = linksHTML(platforms, '');
   } else {
-    streamingMain.innerHTML = '<span class="empty-hint">Liens streaming à ajouter dans site-config.js</span>';
-    streamingSecondary.innerHTML = '<span class="empty-hint">Liens à configurer</span>';
+    streamingMain.innerHTML = `<span class="empty-hint">${t.streamAdd}</span>`;
+    streamingSecondary.innerHTML = `<span class="empty-hint">${t.linksConfig}</span>`;
   }
 
   const socialButtons = document.getElementById('social-buttons');
@@ -49,17 +59,17 @@
     socialButtons.innerHTML = html;
     contactSocial.innerHTML = html;
     const yt = socials.find(([n]) => n === 'YouTube');
-    videoSocial.innerHTML = yt ? `<a href="${yt[1]}" target="_blank" rel="noopener noreferrer">Voir la chaîne YouTube</a>` : html;
+    videoSocial.innerHTML = yt ? `<a href="${yt[1]}" target="_blank" rel="noopener noreferrer">${t.youtubeSee}</a>` : html;
   } else {
-    socialButtons.innerHTML = '<span class="empty-hint">Réseaux à configurer</span>';
+    socialButtons.innerHTML = `<span class="empty-hint">${t.socialsConfig}</span>`;
     contactSocial.innerHTML = '';
-    videoSocial.innerHTML = '<span class="empty-hint">Chaîne YouTube à configurer</span>';
+    videoSocial.innerHTML = `<span class="empty-hint">${t.youtubeConfig}</span>`;
   }
 
   const contact = document.getElementById('contact-action');
   if (cfg.contactEmail && cfg.contactEmail.includes('@')) {
     contact.innerHTML = `<a class="button" href="mailto:${cfg.contactEmail}?subject=Contact%20The%20RougH">${cfg.contactEmail}</a>`;
   } else {
-    contact.innerHTML = '<span class="empty-hint">Adresse e-mail officielle à ajouter dans site-config.js</span>';
+    contact.innerHTML = `<span class="empty-hint">${t.emailAdd}</span>`;
   }
 })();

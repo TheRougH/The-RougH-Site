@@ -220,3 +220,27 @@ h1 span { color: var(--accent); }
     margin-right: .65rem;
   }
 }
+
+
+/* Instagram visible sans dépendre de JavaScript */
+.static-social-fallback {
+  margin-top: .65rem;
+}
+.static-instagram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .62rem .9rem;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: .4rem;
+  background: rgba(255,255,255,.045);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 750;
+  transition: background .18s ease, border-color .18s ease, transform .18s ease;
+}
+.static-instagram:hover {
+  background: rgba(255,255,255,.09);
+  border-color: rgba(255,255,255,.34);
+  transform: translateY(-1px);
+}

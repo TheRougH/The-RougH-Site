@@ -10,7 +10,7 @@ window.THE_ROUGH_CONFIG = {
   youtubeMusic: "https://music.youtube.com/playlist?list=OLAK5uy_m5sBqcl4cN2cDpN-uARwpCFu1pe-vdUpE&si=XxvXAelbHbAW03sV",
   tidal: "https://tidal.com/album/545679735/u",
   youtube: "https://youtube.com/@gillesprovost-iz4ok?si=qDuQdzxe9u4fpO1z",
-  instagram: "",
+  instagram: "https://www.instagram.com/the_rough_metal_band?stkn=NHM1NHd5MGswemk1",
   facebook: "",
   bluesky: "",
   bandcamp: ""

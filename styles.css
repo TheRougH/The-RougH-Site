@@ -45,6 +45,8 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 }
 .brand { text-decoration: none; letter-spacing: .09em; font-size: .95rem; }
 .brand strong { font-size: 1.12rem; }
+.brand-logo { display: inline-flex; align-items: center; }
+.brand-logo img { width: 92px; height: 54px; object-fit: cover; object-position: center; border-radius: .18rem; }
 .main-nav { display: flex; gap: 1.4rem; align-items: center; }
 .main-nav a { text-decoration: none; color: #c9d0d6; font-size: .92rem; }
 .main-nav a:hover { color: white; }
@@ -64,6 +66,8 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 h1, h2, h3 { line-height: 1.1; }
 h1 { margin: 0; font-size: clamp(4.3rem, 10vw, 8.2rem); letter-spacing: -.055em; }
 h1 span { color: var(--accent); }
+.hero-logo-title { margin: 0 0 .4rem; line-height: 0; }
+.hero-logo-title img { width: min(620px, 100%); height: auto; border-radius: .25rem; box-shadow: 0 16px 55px rgba(0,0,0,.32); }
 .hero-album { margin: .15rem 0 0; font-size: clamp(1.55rem, 4vw, 3rem); font-weight: 900; letter-spacing: .12em; }
 .tagline { font-size: 1.28rem; font-weight: 700; margin: 1.6rem 0 .6rem; }
 .intro { color: #c8cfd5; max-width: 700px; font-size: 1.06rem; }
@@ -159,6 +163,8 @@ h1 span { color: var(--accent); }
   .hero-grid { gap: 2.5rem; padding-block: 4rem; }
   .members { grid-template-columns: 1fr; }
   h1 { font-size: clamp(3.4rem, 20vw, 6rem); }
+  .brand-logo img { width: 78px; height: 46px; }
+  .hero-logo-title img { width: min(520px, 100%); }
   .tracklist li { grid-template-columns: auto 1fr; }
   .tracklist time { grid-column: 2; }
 }

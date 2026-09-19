@@ -16,6 +16,7 @@
     ['Deezer', cfg.deezer],
     ['Apple Music', cfg.appleMusic],
     ['YouTube Music', cfg.youtubeMusic],
+    ['Tidal', cfg.tidal],
     ['Bandcamp', cfg.bandcamp]
   ].filter(([,url]) => typeof url === 'string' && url.trim());
 
@@ -33,7 +34,7 @@
   const streamingMain = document.getElementById('streaming-buttons');
   const streamingSecondary = document.getElementById('streaming-secondary');
   if (platforms.length) {
-    streamingMain.innerHTML = linksHTML(platforms.slice(0,4));
+    streamingMain.innerHTML = linksHTML(platforms);
     streamingSecondary.innerHTML = linksHTML(platforms, '');
   } else {
     streamingMain.innerHTML = '<span class="empty-hint">Liens streaming à ajouter dans site-config.js</span>';

@@ -68,11 +68,25 @@ h1 { margin: 0; font-size: clamp(4.3rem, 10vw, 8.2rem); letter-spacing: -.055em;
 h1 span { color: var(--accent); }
 .hero-logo-title { margin: 0 0 .4rem; line-height: 0; }
 .hero-logo-title img { width: min(620px, 100%); height: auto; border-radius: .25rem; box-shadow: 0 16px 55px rgba(0,0,0,.32); }
-.hero-album { margin: .15rem 0 0; font-size: clamp(1.55rem, 4vw, 3rem); font-weight: 900; letter-spacing: .12em; }
+.hero-album {
+  margin: .55rem 0 0;
+  font-size: clamp(.95rem, 1.8vw, 1.25rem);
+  font-weight: 800;
+  letter-spacing: .22em;
+  color: var(--ice);
+  text-transform: uppercase;
+}
 .tagline { font-size: 1.28rem; font-weight: 700; margin: 1.6rem 0 .6rem; }
 .intro { color: #c8cfd5; max-width: 700px; font-size: 1.06rem; }
-.cover-card { margin: 0; background: #0b0e11; border: 1px solid rgba(255,255,255,.14); box-shadow: 0 22px 80px rgba(0,0,0,.45); }
-.cover-card img { aspect-ratio: 1; object-fit: cover; }
+.cover-card { margin: 0; width: 100%; max-width: 430px; justify-self: center; background: #0b0e11; border: 1px solid rgba(255,255,255,.14); box-shadow: 0 22px 80px rgba(0,0,0,.45); overflow: hidden; }
+.cover-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+}
 .cover-card figcaption { color: var(--muted); padding: .75rem 1rem; font-size: .82rem; text-transform: uppercase; letter-spacing: .12em; }
 .cta-row { display: flex; flex-wrap: wrap; gap: .65rem; margin: 1.6rem 0 .8rem; }
 .button, .platform-link {

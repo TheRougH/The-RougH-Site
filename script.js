@@ -10,6 +10,26 @@
     emailAdd: isEN ? 'Official email address to add in site-config.js' : 'Adresse e-mail officielle à ajouter dans site-config.js'
   };
 
+
+  // Nettoyage défensif : certaines versions mobiles peuvent conserver
+  // un ancien HTML en cache contenant l'ancien bouton Instagram statique.
+  document.querySelectorAll('.static-social-fallback').forEach(el => el.remove());
+
+  function dedupeLinks(container) {
+    if (!container) return;
+    const seen = new Set();
+    container.querySelectorAll('a').forEach(a => {
+      const href = (a.getAttribute('href') || '').replace(/[?#].*$/, '').replace(/\/$/, '');
+      const label = (a.textContent || '').trim().toLowerCase();
+      const key = href || label;
+      if (seen.has(key)) {
+        a.remove();
+      } else {
+        seen.add(key);
+      }
+    });
+  }
+
   const menuButton = document.querySelector('.menu-button');
   const nav = document.querySelector('.main-nav');
   menuButton?.addEventListener('click', () => {
@@ -30,6 +50,13 @@
     ['Bandcamp', cfg.bandcamp]
   ].filter(([,url]) => typeof url === 'string' && url.trim());
 
+  const socials = [
+    ['YouTube', cfg.youtube],
+    ['Instagram', cfg.instagram],
+    ['Facebook', cfg.facebook],
+    ['Bluesky', cfg.bluesky]
+  ].filter(([,url]) => typeof url === 'string' && url.trim());
+
   function linksHTML(items, cls='platform-link') {
     return items.map(([name,url]) => `<a class="${cls}" href="${url}" target="_blank" rel="noopener noreferrer">${name}</a>`).join('');
   }
@@ -43,6 +70,7 @@
     streamingMain.innerHTML = `<span class="empty-hint">${t.streamAdd}</span>`;
     streamingSecondary.innerHTML = `<span class="empty-hint">${t.linksConfig}</span>`;
   }
+
 
   const contact = document.getElementById('contact-action');
   if (cfg.contactEmail && cfg.contactEmail.includes('@')) {

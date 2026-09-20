@@ -12,7 +12,7 @@
   <link rel="alternate" hreflang="en" href="https://therough.github.io/The-RougH-Site/en.html">
   <link rel="alternate" hreflang="x-default" href="https://therough.github.io/The-RougH-Site/">
   <link rel="icon" href="assets/let-them-die-cover.jpg" type="image/jpeg">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260920-3">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
@@ -57,6 +57,12 @@
     }
   }
   </script>
+
+  <style id="tr-social-links-fix">
+    .tr-social-links{display:flex!important;gap:.55rem!important;flex-wrap:wrap!important;margin-top:.8rem!important;}
+    .tr-social-links a{display:inline-flex!important;visibility:visible!important;opacity:1!important;padding:.55rem .75rem!important;border:1px solid #3a4651!important;border-radius:.35rem!important;text-decoration:none!important;color:#dce3e7!important;background:#11161b!important;font-size:.88rem!important;}
+    .contact-box .tr-social-links{justify-content:center!important;}
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -173,7 +179,7 @@
           <article class="media-card">
             <h3>Videos</h3>
             <p>Visit The RougH’s official YouTube channel for videos and upcoming band content.</p>
-            <div id="video-social"><a href="https://youtube.com/@gillesprovost-iz4ok?si=qDuQdzxe9u4fpO1z" target="_blank" rel="noopener noreferrer">Visit the YouTube channel</a></div>
+            <div id="video-social"></div>
           </article>
           <article class="media-card">
             <h3>Streaming</h3>
@@ -183,7 +189,8 @@
           <article class="media-card">
             <h3>Social media</h3>
             <p>One name and one spelling everywhere: <strong>The RougH</strong>.</p>
-            <div id="social-buttons" class="link-cloud"><a href="https://youtube.com/@gillesprovost-iz4ok?si=qDuQdzxe9u4fpO1z" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.instagram.com/the_rough_metal_band/" target="_blank" rel="noopener noreferrer">Instagram</a></div>
+            <div class="tr-social-links" aria-label="Social media"><a href="https://youtube.com/@gillesprovost-iz4ok?si=qDuQdzxe9u4fpO1z" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.instagram.com/the_rough_metal_band/" target="_blank" rel="noopener noreferrer">Instagram</a></div>
+            
           </article>
         </div>
       </div>
@@ -227,7 +234,8 @@
         <h2 id="contact-title">Concerts · Festivals · Press · Media</h2>
         <p>For all enquiries regarding The RougH:</p>
         <div id="contact-action"></div>
-        <div id="contact-social" class="link-cloud"><a href="https://youtube.com/@gillesprovost-iz4ok?si=qDuQdzxe9u4fpO1z" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.instagram.com/the_rough_metal_band/" target="_blank" rel="noopener noreferrer">Instagram</a></div>
+        <div class="tr-social-links" aria-label="Social media"><a href="https://youtube.com/@gillesprovost-iz4ok?si=qDuQdzxe9u4fpO1z" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.instagram.com/the_rough_metal_band/" target="_blank" rel="noopener noreferrer">Instagram</a></div>
+        
       </div>
     </section>
   </main>
@@ -239,7 +247,7 @@
     </div>
   </footer>
 
-  <script src="site-config.js?v=20260920-2"></script>
-  <script src="script.js?v=20260920-2"></script>
+  <script src="site-config.js?v=20260920-3"></script>
+  <script src="script.js?v=20260920-3"></script>
 </body>
 </html>

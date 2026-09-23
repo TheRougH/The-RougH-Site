@@ -57,8 +57,16 @@
     ['Bluesky', cfg.bluesky]
   ].filter(([,url]) => typeof url === 'string' && url.trim());
 
+  function analyticsEventName(name) {
+    return 'stream-' + name.toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '');
+  }
+
   function linksHTML(items, cls='platform-link') {
-    return items.map(([name,url]) => `<a class="${cls}" href="${url}" target="_blank" rel="noopener noreferrer">${name}</a>`).join('');
+    return items.map(([name,url]) =>
+      `<a class="${cls}" href="${url}" target="_blank" rel="noopener noreferrer" data-goatcounter-click="${analyticsEventName(name)}">${name}</a>`
+    ).join('');
   }
 
   const streamingMain = document.getElementById('streaming-buttons');
@@ -74,7 +82,7 @@
 
   const contact = document.getElementById('contact-action');
   if (cfg.contactEmail && cfg.contactEmail.includes('@')) {
-    contact.innerHTML = `<a class="button" href="mailto:${cfg.contactEmail}?subject=Contact%20The%20RougH">${cfg.contactEmail}</a>`;
+    contact.innerHTML = `<a class="button" href="mailto:${cfg.contactEmail}?subject=Contact%20The%20RougH" data-goatcounter-click="contact-email">${cfg.contactEmail}</a>`;
   } else {
     contact.innerHTML = `<span class="empty-hint">${t.emailAdd}</span>`;
   }
